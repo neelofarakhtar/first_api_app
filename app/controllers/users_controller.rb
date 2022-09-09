@@ -9,8 +9,9 @@ class UsersController < ApplicationController
 	def new
 	end
 
-	def create
-	@user = User.create(name:  params[:name], mobile_number: params[:mobile_number])
+	def create	
+	debugger
+	@user = User.create(user_params)
 	render json: @user
 	end
 
@@ -30,4 +31,8 @@ class UsersController < ApplicationController
 		render json: @user
 	end
 
+	private
+	def user_params
+		params.permit(:name, :mobile_number, :image)
+	end
 end
