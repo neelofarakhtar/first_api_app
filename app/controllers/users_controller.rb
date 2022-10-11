@@ -10,7 +10,6 @@ class UsersController < ApplicationController
 	end
 
 	def create	
-	debugger
 	@user = User.create(user_params)
 	render json: @user
 	end
