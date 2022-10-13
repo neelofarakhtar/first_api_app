@@ -19,4 +19,9 @@ module FirstApiApp
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
   end
+  if Rails.env.test?
+  RSpec.configure do |config|
+    config.swagger_dry_run = false
+  end
+end
 end
